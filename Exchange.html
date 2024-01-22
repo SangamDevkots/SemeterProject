@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Exchange Form</title>
+<link rel="stylesheet" href="Exchange.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card__img">
+                <picture>
+                    <source media="(min-width:600px)" srcset="https://images-na.ssl-images-amazon.com/images/I/718ReYbwlFL.jpg">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/718ReYbwlFL.jpg" alt="">
+                </picture>
+            </div>
+            <div class="card__content">
+                <p class="card__tag">perfume</p>
+                <h1 class="card__title">Gabrielle essence eau de parfum</h1>
+                <p class="card__desc">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+                <div class="card__price">
+                    <h1>$149.99</h1>
+                    <s>$169.99</s>
+                </div>
+                <button class="card__btn">
+                    <img src="https://rvs-product-preview-card-component.vercel.app/images/icon-cart.svg" alt="">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="contact-form-wrapper">
+                <div class="inner">
+                    <div class="lead-form-container">
+                        <form id="exchange-form" name="exchange-form" class="col s12" data-parsley-validate="" novalidate="">
+                            <h2 class="dynamic-contact-heading">Book Exchange Form</h2>
+                            <div class="input-field">
+                                <input id="book_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <label for="book_name">Book Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="author" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <label for="author">Author</label>
+                            </div>
+                            <div class="input-field">
+                                <select name="book_condition" id="book_condition" required="" data-parsley-required-message="Required" class="is-blank">
+                                    <option value=""></option>
+                                    <option value="new">New</option>
+                                    <option value="like_new">Like New</option>
+                                    <option value="used">Used</option>
+                                </select>
+                                <label for="book_condition">Book Condition</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="reason_to_exchange" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <label for="reason_to_exchange">Reason to Exchange</label>
+                            </div>
+                            <h2 class="dynamic-contact-heading">Contact Information</h2>
+                            <div class="input-field">
+                                <input id="first_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="last_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="phone" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="email" type="email" class="validate is-blank" data-parsley-trigger="change" required="" data-parsley-required-message="Required" data-parsley-type-message="Invalid">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="file" type="file" class="validate is-blank" data-parsley-trigger="change" required="" data-parsley-required-message="Required" data-parsley-type-message="Invalid">
+                                <label for="email">Your Book Image</label>
+                            </div>
+                            <input type="submit" name="exchange-submit" id="exchange-submit" value="Submit Exchange Request" class="card__btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
