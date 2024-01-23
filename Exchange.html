@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Exchange Form</title>
-<link rel="stylesheet" href="Exchange.css">
+    <link rel="stylesheet" href="Exchange.css">
 </head>
 <body>
     <div class="container">
@@ -34,14 +34,15 @@
             <div class="contact-form-wrapper">
                 <div class="inner">
                     <div class="lead-form-container">
-                        <form id="exchange-form" name="exchange-form" class="col s12" data-parsley-validate="" novalidate="">
+                        <form action="process-form.php" method="post" enctype="multipart/form-data">
+
                             <h2 class="dynamic-contact-heading">Book Exchange Form</h2>
                             <div class="input-field">
-                                <input id="book_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <input id="book_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required" name="book_name">
                                 <label for="book_name">Book Name</label>
                             </div>
                             <div class="input-field">
-                                <input id="author" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <input id="author" type="text" class="validate is-blank" required="" data-parsley-required-message="Required" name="author">
                                 <label for="author">Author</label>
                             </div>
                             <div class="input-field">
@@ -54,29 +55,29 @@
                                 <label for="book_condition">Book Condition</label>
                             </div>
                             <div class="input-field">
-                                <input id="reason_to_exchange" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <input id="reason_to_exchange" type="text" class="validate is-blank" required="" data-parsley-required-message="Required" name="reason_to_exchange">
                                 <label for="reason_to_exchange">Reason to Exchange</label>
                             </div>
                             <h2 class="dynamic-contact-heading">Contact Information</h2>
                             <div class="input-field">
-                                <input id="first_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <input id="first_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required" name="first_name">
                                 <label for="first_name">First Name</label>
                             </div>
                             <div class="input-field">
-                                <input id="last_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <input id="last_name" type="text" class="validate is-blank" required="" data-parsley-required-message="Required" name="last_name">
                                 <label for="last_name">Last Name</label>
                             </div>
                             <div class="input-field">
-                                <input id="phone" type="text" class="validate is-blank" required="" data-parsley-required-message="Required">
+                                <input id="phone" type="text" class="validate is-blank" required="" data-parsley-required-message="Required" name="phone">
                                 <label for="phone">Phone Number</label>
                             </div>
                             <div class="input-field">
-                                <input id="email" type="email" class="validate is-blank" data-parsley-trigger="change" required="" data-parsley-required-message="Required" data-parsley-type-message="Invalid">
+                                <input id="email" type="email" class="validate is-blank" data-parsley-trigger="change" required="" data-parsley-required-message="Required" data-parsley-type-message="Invalid" name="email">
                                 <label for="email">Email</label>
                             </div>
                             <div class="input-field">
-                                <input id="file" type="file" class="validate is-blank" data-parsley-trigger="change" required="" data-parsley-required-message="Required" data-parsley-type-message="Invalid">
-                                <label for="email">Your Book Image</label>
+                                <input id="file" type="file" class="validate is-blank" data-parsley-trigger="change" required="" data-parsley-required-message="Required" data-parsley-type-message="Invalid" name="file">
+                                <label for="file">Your Book Image</label>
                             </div>
                             <input type="submit" name="exchange-submit" id="exchange-submit" value="Submit Exchange Request" class="card__btn">
                         </form>
@@ -85,5 +86,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Include your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
