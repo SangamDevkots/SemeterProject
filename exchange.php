@@ -87,7 +87,6 @@
         </div>
     </div>
 
-    <!-- Include your JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>

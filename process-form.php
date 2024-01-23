@@ -1,6 +1,6 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+if (isset($_POST['exchange-submit'])) {
+    // Retrieve form data
     $bookName = htmlspecialchars($_POST["book_name"]);
     $author = htmlspecialchars($_POST["author"]);
     $bookCondition = htmlspecialchars($_POST["book_condition"]);
@@ -11,8 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 
 
-    $to = "sangamdevkota02@gmail.com";  
+    $to = "sangamdevkota02@gmail.com";
+    
+  
     $subject = "New Book Exchange Request";
+
+
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
@@ -27,14 +31,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailMessage .= "Phone: $phone\n";
     $emailMessage .= "Email: $email\n";
 
-  
-    if (mail($to, $subject, $emailMessage, $headers)) {
+
+    $smtpServer = 'smtp.gmail.com';
+    $smtpPort = 465;
+    $smtpUsername = 'sangamdevkota02@gmail.com';
+    $smtpPassword = 'rxpqxychyppvuwrx'; 
+ 
+    if (mail($to, $subject, $emailMessage, $headers, "-f $smtpUsername")) {
         echo "Email sent successfully!";
     } else {
         echo "Error sending email. Please check your server configuration.";
     }
 } else {
- 
-    header("Location: Exchange.html");
+
+    header("Location: Exchange.php");
 }
 ?>
